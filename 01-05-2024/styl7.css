@@ -1,0 +1,56 @@
+* {
+    font-family: Cambria;
+}
+#lewy-pierwszy, #lewy-drugi {
+    background-color: #e1bee7;
+    width: 25%;
+
+}
+#lewy-pierwszy {
+    height: 400px;
+    float: left;
+}
+#lewy-drugi {
+    height: 330px;
+    float: left;
+}
+#prawy-pierwszy, #prawy-drugi{
+    width: 75%;
+    font-style: 170%;
+    text-align: center;
+}
+#prawy-pierwszy {
+    background-color: #9c64a6;
+    color: white;
+    height: 150px;
+    letter-spacing: 5px;
+    float: right;
+}
+#prawy-drugi {
+    color: indigo;
+    height: 580px;
+    float: right;
+}
+footer {
+    background-color: #9c64a6;
+    color: white;
+    padding: 10px;
+    clear: both;
+}
+h2 {
+    text-align: center;
+}
+ul {
+    list-style-type: circle;
+}
+img {
+    padding: 4px;
+    margin: 15px;
+}
+img:hover {
+    padding: 3px;
+    border: 1px dashed indigo;
+}
+#odsylacz-glowna {
+    padding: 25px;
+}

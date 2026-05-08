@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salon kosmetyczny</title>
+    <link rel="stylesheet" href="styl7.css">
+</head>
+<body>
+    <main>
+        <section id="lewy-pierwszy">
+            <h2>Nasza oferta</h2>
+            <ol>
+                <li><a href="twarz.html">Oczyszczanie twarzy</a>
+                    <ul>
+                        <li>Peeling</li>
+                        <li>Maska</li>
+                    </ul>
+                </li>
+                <li>Masaż</li>
+                <li>Makijaż</li>
+            </ol>
+            <a href="index.html" id="odsylacz-glowna">Strona główna</a>
+        </section>
+        <section id="prawy-pierwszy">
+            <h1>Usługi kosmetyczne</h1>
+        </section>
+        <section id="prawy-drugi">
+            <h3>Kalkulator ceny wizyty</h3>
+            <input type="checkbox" id="peeling">Peeling<br>
+            <input type="checkbox" id="maska">Maska<br>
+            <input type="checkbox" id="masaz">Masaż twarzy<br>
+            <input type="checkbox" id="makijarz">Makijarz<br>
+            <button onclick="obliczCene()">Oblicz cenę</button>
+            <p id="obliczenia"></p>
+        </section>
+        <section id="lewy-drugi">
+            <img src="obraz1.jpg" alt="Personel">
+        </section>
+        
+    </main>
+    <footer>
+        <p>Autor strony: 00000000000</p>
+    </footer>
+    
+</body>
+<script>
+    function obliczCene() {
+        let servicesArray = [document.getElementById('peeling').checked, document.getElementById('maska').checked, 
+        document.getElementById('masaz').checked, document.getElementById('makijarz').checked];
+        let valueArray = [45, 30, 20, 50];
+        let sum = 0;
+        for(let i=0; i<=servicesArray.length; i++){
+            if (servicesArray[i]){
+                sum += valueArray[i];
+            }
+        }
+        document.getElementById('obliczenia').innerHTML = "Cena zabiegów: " + sum;
+    }
+</script>
+</html>
