@@ -1,0 +1,37 @@
+* {
+    font-family: Garamond;
+    text-align: center;
+    margin: auto;
+}
+header, footer {
+    background-color: #8c7b75;
+    color: white;
+    width: 70px;
+    font-style: 150%;
+    width: auto;
+}
+#lewy, #prawy{
+    background-color: #bcaaa4;
+    height: 400px;
+    width: 35%;
+}
+#srodkowy {
+    background-color: #efdcd5;
+    height: 400px;
+    width: 30%;
+}
+ol {
+    list-style-type: lower-alpha; 
+}
+img {
+    border: 1px dashed #8c7b75;
+    padding: 5px;
+    border-radius: 10%;
+}
+#skrypt2 {
+    margin-top: 100px;
+    border:  1px solid #8c7b75;
+}
+main {
+    display: flex;
+}

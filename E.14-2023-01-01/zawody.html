@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zawody wędkarskie</title>
+    <link rel="stylesheet" href="styl3.css">
+</head>
+<body>
+    <section id="banner">
+        <header id="lewy">
+            <h1>Zawody polskich wędkarzy</h1>
+        </header>
+        <header id="prawy">
+            <img src="zawody.jpg" alt="wędkowanie">
+        </header>
+    </section>
+    <main>
+        <h3>Łowiska</h3>
+        <ul>
+            <li>Zalew Węgrowski</li>
+            <li>Zbiornik Bukówka</li>
+            <li>Jeziorko Bartbetowskie</li>
+            <li>Warta-Obrzycko</li>
+        </ul>
+        <h3>Dodaj zawody wędkarskie</h3>
+        <form action="http://localhost/zgloszenie.php" method="POST">
+            <label>
+                Łowisko:
+                <input type="number" name="lowisko">
+            </label><br>
+            <label>
+                Data:
+                <input type="date" name="data">
+            </label><br>
+            <label>
+                Sędzia: 
+                <input type="text" name="sedzia">
+            </label><br>
+            <label>
+                <input type="submit" name="wyslij" value="DODAJ">
+            </label>
+            <label>
+                <input type="reset" value="CZYŚĆ">
+
+            </label>
+            
+        </form>
+
+<?php
+$poloczenie = mysqli_connect('localhost', 'root', '', 'wedkarstwo');
+if (!mysqli_select_db($poloczenie, 'wedkarstwo')){
+    mysqli_close($poloczenie);
+    exit();
+}
+if (isset($_POST['wyslij'])){
+    $lowisko = $_POST['lowisko'];
+    $data = $_POST['data'];
+    $sedzia = $_POST['sedzia'];
+    $sql = "INSERT INTO zawody_wedkarskie VALUES(null, '0', '$lowisko', '$data', '$sedzia');";
+    mysqli_query($poloczenie, $sql);
+    mysqli_close($poloczenie);
+
+}
+
+?>
+    
+    </main>
+    <section id="stopki">
+        <footer id="stopka-pierwsza">
+            <a href="kwerendy.txt">Pobierz</a>
+        </footer>
+        <footer><p>Stronę wykonał: 00000000000000</p></footer>
+    </section>
+</body>
+</html>

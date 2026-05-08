@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+          <section id="aside">
+            <h3>Chaty</h3>
+            <ul>
+                <li>Ogólny</li>
+                <li>Tematyczny
+                    <ol>
+                        <li>Turystyczny</li>
+                        <li>Żeglarski</li>
+                        <li>Filalestyczny</li>
+                        <li>Hodowla zwierzątek
+                            domowych</li>
+                    </ol>
+                </li>
+            </ul>
+            <h3>Uczestnicy</h3>
+            <p>Jolanta Nowak</p>
+            <img src="Jolka.jpg" alt="Jolanta Nowak">
+            <p>Krzysztof Łukasiński</p>
+            <img src="Krzysiek.jpg" alt="Krzysztof Łukasiński">
+        </section>
+                <section id="header">
+                    <h2>Chat</h2>
+                </section>
+                <main>
+                    <section id="chat">
+                        <section class="jolka">
+                            <img src="Jolka.jpg">
+                            <p>Cześć idziesz jutro do
+                                kina</p>
+                        </section>
+                        <section class="krzychu">
+                            <img src="Krzysiek.jpg">
+                            <p>Tak! A ty?</p>
+                        </section>
+                    </section>
+                    Wpisz wiadomość: <input type="text" id="downloadMessage">
+                    <button class="buttons" onclick="submit()">Wyślij</button>
+                    <button class="buttons" onclick="generateAnswer()" type="reset">Generuj losową odpowiedź</button>
+                </main>
+        
+    <footer>Chat wykonał: 0000000000</footer>
+</body>
+<script>
+    function submit() {
+        let message = document.getElementById('downloadMessage').value;
+        let img = document.createElement('img');
+        let paragraph = document.createElement('p');
+        let section = document.createElement('section');
+        let chat = document.getElementById('chat');
+        chat.appendChild(section);
+        section.classList.add('jolka')
+        section.appendChild(img);
+        img.src = "Jolka.jpg";
+        section.appendChild(paragraph);
+        paragraph.innerHTML = message;
+        section.scrollIntoView();
+    }
+    function generateAnswer() {
+        let answers = ["Świetnie!",
+"Kto gra główną rolę?",
+"Lubisz filmy Tego reżysera?",
+"Będę 10 minut wcześniej",
+"Może kupimy sobie popcorn?",
+"Ja wolę Colę",
+"Zaproszę jeszcze Grześka",
+"Tydzień temu też byłem w kinie na Diunie",
+"Ja funduję bilety"];
+    let randomNumber = Math.floor(Math.random()*10);
+    let check = true
+    while (check){
+        if (randomNumber>=0 && randomNumber <=8){
+            let img = document.createElement('img');
+            let paragraph = document.createElement('p');
+            let section = document.createElement('section');
+            let chat = document.getElementById('chat');
+            chat.appendChild(section);
+            section.classList.add('krzychu')
+            section.appendChild(img);
+            img.src = "Krzysiek.jpg";
+            section.appendChild(paragraph);
+            paragraph.innerHTML = answers[randomNumber];
+            section.scrollIntoView();
+            break;
+        }
+        else {
+            randomNumber =  Math.floor(Math.random()*10);
+        }
+    }
+    }
+</script>
+</html>

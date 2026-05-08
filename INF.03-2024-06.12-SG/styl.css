@@ -1,0 +1,44 @@
+* {
+    font-family: Century, serif;
+    text-align: center;
+}
+header, footer {
+    background-color: indigo;
+    color: white;
+    font-style: italic;
+    padding: 2px;
+    clear: both;
+}
+#bee, #orange, #fruits, #turtle {
+    width: 50%;
+    height: 470px;
+}
+img {
+    padding: 3px;
+    margin: 10px;
+    border: 2px dashed slateblue;
+}
+a {
+    color: white;
+}
+button {
+    background-color: slateblue;
+    color: white;
+    border: none;
+    padding: 10px 20px 10px 20px;
+    margin-top: 10px;
+}
+button:hover {
+    background-color: indigo;
+}
+.range {
+    width: 80%;
+}
+#bee, #orange {
+    float: left;
+}
+#turtle {
+    float: right;
+}
+
+

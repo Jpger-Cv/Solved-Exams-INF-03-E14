@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efekty obrazu</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <header>
+        <h2>Efekty na obrazach</h2>
+    </header>
+    <main>
+        <section id="bee">
+            <img src="pszczola.jpg" alt="pszczoła na fioletowym kwiatku" id="bee_img"><br>
+            <section id="chuj">
+                <input id="blur" type="radio" name="option" value="blur">Blur <br>
+                <input id="sepia" type="radio" name="option" value="sepia">Sepia <br>
+                <input id="negative" type="radio" name="option" value="negative">Negatyw <br>
+            </section>
+            <button onclick="effectOption()">Zastosuj</button>
+        </section>
+        <section id="orange">
+            <img src="pomarancza.jpg" alt="drzewo pomarańczy" id="orange_img"><br>
+            <button onclick="colorful()">Kolorowy</button>
+            <button onclick="blackWhite()">Czarno-biały</button>
+        </section>
+        <section id="fruits">
+            <img src="owoce.jpg" alt="Kosz pełen owoców" id="fruits_img">
+            <input type="range" min="0" max="100" class="range" value="100" id="range_F"> <br>
+            <button onclick="opacity()">Zastosuj</button><br>
+        </section>
+        <section id="turtle">
+            <img src="zolw.jpg" alt="Żółw w wodzie" id="turtle_img">
+            <input type="range" min="0" max="250" class="range" id="range_S"> <br>
+            <button onclick="contrast()">Zastosuj</button><br>
+        </section>
+    </main>
+    <footer>
+        <p> <a href="http://www.css.com/" target="_blank">Zobacz inne efekty</a></p>
+        <p>Stronę wykonał: 000000000</p>
+    </footer>
+</body>
+<script>
+    function effectOption(){
+        
+        if (document.getElementById('blur').checked){
+            document.getElementById('bee_img').style.filter = "blur(5px)";
+        }
+        else if(document.getElementById('sepia').checked){
+            document.getElementById('bee_img').style.filter = "sepia(100%)"
+        }
+        else if(document.getElementById('negative').checked){
+            document.getElementById('bee_img').style.filter = "invert(100%)"
+        }
+    }
+    
+    function colorful(){
+        document.getElementById('orange_img').style.filter = "grayscale(0%)";
+
+    }
+    function blackWhite(){
+        document.getElementById('orange_img').style.filter = "grayscale(100%)";
+    }
+    function opacity(){
+        let rangeOpacity = document.getElementById('range_F').value;
+        document.getElementById('fruits_img').style.filter = "opacity(" + rangeOpacity + "%)";
+
+    }
+    function contrast(){
+        let rangeConstrast = document.getElementById('range_S').value;
+        document.getElementById('turtle_img').style.filter = "contrast(" + rangeConstrast + "%)";
+    }
+</script>
+</html>
